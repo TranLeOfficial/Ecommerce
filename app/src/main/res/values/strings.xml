@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">EcommerceUser</string>
+    <string name="txtDangNhap">Đăng Nhập</string>
+    <string name="txtDangKi">Đăng Kí</string>
+    <string name="edtUser">Mời bạn nhập Username...</string>
+    <string name="edtPass">Mời bạn nhập Password...</string>
+    <string name="btnDangnhap">Đăng Nhập</string>
+    <string name="btnĐăngki">Đăng Kí</string>
+    <string name="txtShipper">Shipper</string>
+    <string name="txtThuKho">Thủ Kho</string>
+    <string name="linkFacebook">Tiếp tục với Facebook</string>
+    <string name="edtTenDangNhap">Nhập Tên Đăng Nhập...</string>
+    <string name="edtTen">Nhập Tên...</string>
+    <string name="edtMatKhau">Nhập Mật Khẩu...</string>
+    <string name="edtXacNhan">Nhập Mật Khẩu Xác Nhận...</string>
+    <string name="edtSDT">Nhập SĐT...</string>
+    <string name="txtDonHang">Các Đơn Hàng Cần Giao</string>
 </resources>
