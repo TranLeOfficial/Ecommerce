@@ -31,13 +31,13 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         setSupportActionBar(toolbar);
 //        Hide or show item
         menu = navigationView.getMenu();
-        menu.findItem(R.id.nav_home).setVisible(false);
-        menu.findItem(R.id.nav_login).setVisible(false);
-        menu.findItem(R.id.nav_alarm).setVisible(false);
-        menu.findItem(R.id.nav_cate).setVisible(false);
-        menu.findItem(R.id.nav_logout).setVisible(false);
-        menu.findItem(R.id.nav_profile).setVisible(false);
-        menu.findItem(R.id.nav_search).setVisible(false);
+        menu.findItem(R.id.nav_home).setVisible(true);
+        menu.findItem(R.id.nav_login).setVisible(true);
+        menu.findItem(R.id.nav_alarm).setVisible(true);
+        menu.findItem(R.id.nav_cate).setVisible(true);
+        menu.findItem(R.id.nav_logout).setVisible(true);
+        menu.findItem(R.id.nav_profile).setVisible(true);
+        menu.findItem(R.id.nav_search).setVisible(true);
 
 //        --------------------------- NavigationView Drawer Menu--------------------------
         navigationView.bringToFront();
@@ -45,7 +45,7 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
-        navigationView.setCheckedItem(R.id.nav_home);
+        //navigationView.setCheckedItem(R.id.nav_home);
     }
 
     @Override
@@ -84,6 +84,8 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
             case R.id.nav_profile:
                 break;
             case R.id.nav_search:
+                break;
+            default:
                 break;
         }
         drawerLayout.closeDrawer(GravityCompat.START);

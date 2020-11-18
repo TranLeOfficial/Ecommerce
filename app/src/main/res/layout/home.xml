@@ -22,7 +22,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/toolBar"
-                android:background="@color/colorRed"
+                android:background="@color/colorPrimary"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="?attr/actionBarTheme"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -37,6 +37,8 @@
         android:id="@+id/nav_view"
         app:headerLayout="@layout/header"
         app:menu="@menu/main_menu"
+        app:itemTextColor="#000"
+        app:itemIconTint="#09EA14"
         android:layout_gravity="start" />
 
 </androidx.drawerlayout.widget.DrawerLayout>
