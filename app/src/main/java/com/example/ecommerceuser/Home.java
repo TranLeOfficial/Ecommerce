@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,10 +15,17 @@ import android.view.MenuItem;
 
 
 import com.example.ecommerceuser.Activity.Login;
+import com.example.ecommerceuser.Fragment.AlarmFragment;
+import com.example.ecommerceuser.Fragment.CategoryFragment;
+import com.example.ecommerceuser.Fragment.HomeFragment;
+import com.example.ecommerceuser.Fragment.ProfileFragment;
+import com.example.ecommerceuser.Fragment.SearchFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
 public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     //Bien
+    BottomNavigationView botMenuNavi;
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
@@ -46,7 +54,40 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
         //navigationView.setCheckedItem(R.id.nav_home);
+
+
+        //        --------------------------- BottomNavigation Menu--------------------------
+        botMenuNavi = findViewById(R.id.bottom_menu);
+        botMenuNavi.setOnNavigationItemSelectedListener(botMenuListener);
     }
+    //        --------------------------- BottomNavigation Menu--------------------------
+
+    private BottomNavigationView.OnNavigationItemSelectedListener botMenuListener = new BottomNavigationView.OnNavigationItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+            Fragment selectedFragment = null;
+            switch (item.getItemId())
+            {
+                case R.id.bot_home:
+                    selectedFragment = new HomeFragment();
+                    break;
+                case R.id.bot_cate:
+                    selectedFragment = new CategoryFragment();
+                    break;
+                case R.id.bot_search:
+                    selectedFragment = new SearchFragment();
+                    break;
+                case R.id.bot_alarm:
+                    selectedFragment = new AlarmFragment();
+                    break;
+                case R.id.bot_profile:
+                    selectedFragment = new ProfileFragment();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_bot_menu, selectedFragment).commit();
+            return true;
+        }
+    };
 
     @Override
     public void onBackPressed() {
